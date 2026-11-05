@@ -24,7 +24,7 @@ ChatGPT Image Studio combines natural-language image generation with a compact P
 **Requirements:** Windows, **Adobe Photoshop 25.2 or later**, [Adobe UXP Developer Tool (UDT)](https://developer.adobe.com/photoshop/uxp/2022/guides/devtool/), internet access for remote image generation, and an API credential for the provider you want to use.
 
 1. Open **[GitHub Releases](https://github.com/springcell/ChatgptImageStudio-Of-Photoshop/releases)** and, once v0.3.5 is published, download **`chatgpt-image-studio-local-0.3.5.zip`**.
-2. **Extract all files** to a writable folder on your Windows PC. Keep the whole extracted folder together; the Photoshop plugin loads files from `plugin/`.
+2. **Extract all files** to the `Plug-ins` folder. Keep the whole extracted folder together; the Photoshop plugin loads files from `plugin/`.
 3. Double-click **`Install.cmd`** in the extracted folder. This installs and starts the **desktop floating toolbar**; it does **not** automatically install the Photoshop panel.
 4. Open **Adobe UXP Developer Tool (UDT)**. Choose **Add Plugin**, browse to **`plugin/manifest.json`** in the extracted folder, and then **Load** the plugin from UDT.
 5. In Photoshop, open the **chatgpt image studio Local** panel from the **Plugins** menu (location can vary by Photoshop version).
@@ -49,7 +49,7 @@ chatgpt-image-studio-local-0.3.5/
 ```
 
 > [!IMPORTANT]
-> Run `Install.cmd` **and** load `plugin/manifest.json` via UDT. These are two different setup steps. This Local edition uses plugin ID `com.imagestudio.images.localconfig` and a separate desktop folder, so it does not replace the previous 0.2.46 edition. Only run a downloaded installer if you trust its source.
+> Run `Install.cmd` **and** load `plugin/manifest.json` via UDT. These are two different setup steps and both are required.
 
 ## First-time setup
 
