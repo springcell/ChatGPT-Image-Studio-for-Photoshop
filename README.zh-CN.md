@@ -24,7 +24,7 @@ ChatGPT Image Studio 将 AI 图片生成与 Photoshop 悬浮工具条结合：�
 **运行环境：** Windows、**Adobe Photoshop 25.2 或更高版本**、[Adobe UXP Developer Tool（UDT）](https://developer.adobe.com/photoshop/uxp/2022/guides/devtool/)、可访问所用图片 API 的网络，以及服务商对应的 API Key。
 
 1. 打开 **[GitHub Releases](https://github.com/springcell/ChatgptImageStudio-Of-Photoshop/releases)**；待 v0.3.5 发布后，下载 **`chatgpt-image-studio-local-0.3.5.zip`**。
-2. **完整解压 ZIP** 到 Windows 中可写入的目录。不要只单独解压 `Install.cmd`，需保留整个目录结构。
+2. **完整解压 ZIP** 到 Plug-ins目录。不要只单独解压 `Install.cmd`，需保留整个目录结构。
 3. 双击根目录的 **`Install.cmd`**，安装并启动**桌面悬浮工具条**。注意：**此步骤不会自动安装 Photoshop 面板。**
 4. 打开 **Adobe UXP Developer Tool（UDT）**，点击 **Add Plugin**，选择解压目录中的 **`plugin/manifest.json`**，然后点击 **Load** 加载插件。
 5. 在 Photoshop 的 **插件（Plugins）** 菜单中打开 **`chatgpt image studio Local`** 面板（具体位置随 Photoshop 版本变化）。
@@ -49,7 +49,7 @@ chatgpt-image-studio-local-0.3.5/
 ```
 
 > [!IMPORTANT]
-> **运行 `Install.cmd` 和通过 UDT 加载 `plugin/manifest.json` 是两个独立步骤，必须分别完成。** 本地版使用独立插件 ID `com.imagestudio.images.localconfig` 和桌面数据目录，不会覆盖原 0.2.46 版本。运行安装脚本前，请确认文件来自可信来源。
+> **运行 `Install.cmd` 和通过 UDT 加载 `plugin/manifest.json` 是两个独立步骤，必须分别完成。** 
 
 ## 首次配置 API
 
