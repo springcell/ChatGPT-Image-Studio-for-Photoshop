@@ -2,9 +2,9 @@
 
 [English](README.md) | **简体中文**
 
-[下载 v0.3.7 预览版](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7) · [安装指南](#下载与安装windows) · [绘图 Skill](#绘图-skill-预览) · [反馈问题](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/issues)
+[下载 v0.3.7](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7) · [安装指南](#下载与安装windows) · [绘图 Skill](#绘图-skill) · [反馈问题](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/issues)
 
-**Local 本地版 v0.3.7 · Skill 预览版** · Windows · Adobe Photoshop 25.2+ · UXP
+**Local 本地版 v0.3.7 · 绘图 Skill** · Windows · Adobe Photoshop 25.2+ · UXP
 
 **把 AI 生图、区域修改和可复用的绘图 Skill 带进 Photoshop。**
 
@@ -19,7 +19,7 @@ ChatGPT Image Studio 将 AI 图片生成与 Photoshop 悬浮工具条结合：�
 > [!NOTE]
 > 本项目为**独立开发的 Photoshop 插件**，并非 Adobe 或 OpenAI 官方产品。实际可用模型、API 权限和输出行为取决于所选服务商及插件版本。下方截图用于说明操作流程，不代表所有模型与服务商组合均已验证。
 
-## 绘图 Skill 预览
+## 绘图 Skill
 
 v0.3.7 新增绘图 Skill 管理，用于复用绘图说明和参考资源：
 
@@ -28,7 +28,7 @@ v0.3.7 新增绘图 Skill 管理，用于复用绘图说明和参考资源：
 - Skill 功能无需独立 Runner 或额外服务；不执行 Skill 内的脚本或扩展步骤。
 
 > [!WARNING]
-> **这是预览版，尚未完成生产环境验证。** 根据安装包说明，v0.3.7 已进行离线测试，但尚未完成 **Photoshop 实机验收或真实图片 API 请求验证**。请保留旧版以便回滚。下方截图及详细操作示例来自 v0.3.5，不代表 v0.3.7 已通过端到端验收。
+> 根据维护者反馈，v0.3.7 已通过 Photoshop 实机测试并支持 Skill。请保留旧版以便回滚。下方截图及详细操作示例来自 v0.3.5，服务商和模型的兼容性可能有所不同。
 
 **从这里开始：** [v0.3.7 发布说明与插件下载](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7)。另一个 [v0.3.5-docs 发布包](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.5-docs)仅含文档，**不含插件安装器**。
 
@@ -36,7 +36,7 @@ v0.3.7 新增绘图 Skill 管理，用于复用绘图说明和参考资源：
 
 **运行环境：** Windows、**Adobe Photoshop 25.2 或更高版本**、[Adobe UXP Developer Tool（UDT）](https://developer.adobe.com/photoshop/uxp/2022/guides/devtool/)、可访问所用图片 API 的网络，以及服务商对应的 API Key。
 
-1. 打开 **[v0.3.7 预览版发布页](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7)**，在 **Assets** 中下载 **`chatgpt-image-studio-local-0.3.7-skills.zip`**。不要下载仅含文档的 ZIP，也不要把 GitHub 自动生成的源码压缩包当作安装包。
+1. 打开 **[v0.3.7 发布页](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7)**，在 **Assets** 中下载 **`chatgpt-image-studio-local-0.3.7-skills.zip`**。不要下载仅含文档的 ZIP，也不要把 GitHub 自动生成的源码压缩包当作安装包。
 2. **完整解压 ZIP** 到 Plug-ins目录。不要只单独解压 `Install.cmd`，需保留整个目录结构。
 3. 双击根目录的 **`Install.cmd`**，安装并启动**桌面悬浮工具条**。注意：**此步骤不会自动安装 Photoshop 面板。**
 4. 打开 **Adobe UXP Developer Tool（UDT）**，点击 **Add Plugin**，选择解压目录中的 **`plugin/manifest.json`**，然后点击 **Load** 加载插件。
@@ -233,7 +233,7 @@ v0.3.7 发布附件记录的 SHA-256：
 
 ## 试用与反馈
 
-[下载预览版](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7)，先用作品副本试用。如遇可复现问题，请在 [Issues](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/issues) 中提供 Windows / Photoshop 版本、插件版本、服务商与模型名称、操作步骤、预期结果和实际结果。**不要提交 API Key 或私人作品。**
+[下载 v0.3.7](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7)，先用作品副本试用。如遇可复现问题，请在 [Issues](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/issues) 中提供 Windows / Photoshop 版本、插件版本、服务商与模型名称、操作步骤、预期结果和实际结果。**不要提交 API Key 或私人作品。**
 
 工作流建议或有权公开的使用案例可以发到 [Discussions](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/discussions)。如果这个项目对你有帮助，欢迎点一个 Star，让更多人发现它。
 
