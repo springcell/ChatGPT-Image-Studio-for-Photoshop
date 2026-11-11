@@ -2,11 +2,11 @@
 
 **English** | [简体中文](README.zh-CN.md)
 
-[Download / Releases](https://github.com/springcell/ChatgptImageStudio-Of-Photoshop/releases) · [Installation](#download-and-install-windows) · [Toolbar guide](#floating-toolbar-at-a-glance) · [Troubleshooting](#troubleshooting)
+[Download v0.3.7 preview](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7) · [Installation](#download-and-install-windows) · [Drawing Skills](#drawing-skills-preview) · [Feedback](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/issues)
 
-**Local Edition v0.3.5** · Windows · Adobe Photoshop 25.2+ · UXP
+**Local Edition v0.3.7 · Skill preview** · Windows · Adobe Photoshop 25.2+ · UXP
 
-**Generate, edit, remove, and expand images inside Adobe Photoshop.**
+**AI image generation, region-guided editing, and reusable drawing Skills in Photoshop.**
 
 ChatGPT Image Studio combines natural-language image generation with a compact Photoshop editing toolbar. Generate new artwork, guide edits with image-region comments, remove backgrounds or objects, and expand a composition to a new aspect ratio.
 
@@ -19,39 +19,46 @@ ChatGPT Image Studio combines natural-language image generation with a compact P
 > [!NOTE]
 > This is an **independent, community-made Photoshop integration**, not an official Adobe or OpenAI product. Model options, API availability, output behavior, and installation screens may vary by release. Screenshots illustrate the workflow; they do not prove every model/provider combination was tested.
 
+## Drawing Skills preview
+
+The v0.3.7 preview adds a way to reuse drawing instructions and reference assets:
+
+- Import and manage a Skill from a ZIP, a `SKILL.md` file, or a folder.
+- Select a Skill for image generation and choose whether to attach its resource images.
+- No separate Runner or additional service is required for the Skill feature. Skill scripts and extension steps are not executed.
+
+> [!WARNING]
+> **Preview, not a validated production release.** According to the package notes, v0.3.7 has passed offline tests, but Photoshop-host acceptance and live image-API requests have **not** been verified. Keep a previous working version for rollback. The screenshots and detailed workflow below document v0.3.5; they are not proof that v0.3.7 has passed end-to-end testing.
+
+**Start here:** [v0.3.7 release notes and plugin download](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7). The separate [v0.3.5-docs release](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.5-docs) contains documentation only, **not the plugin installer**.
+
 ## Download and install (Windows)
 
 **Requirements:** Windows, **Adobe Photoshop 25.2 or later**, [Adobe UXP Developer Tool (UDT)](https://developer.adobe.com/photoshop/uxp/2022/guides/devtool/), internet access for remote image generation, and an API credential for the provider you want to use.
 
-1. Open **[GitHub Releases](https://github.com/springcell/ChatgptImageStudio-Of-Photoshop/releases)** and, once v0.3.5 is published, download **`chatgpt-image-studio-local-0.3.5.zip`**.
+1. Open the **[v0.3.7 preview release](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7)** and download **`chatgpt-image-studio-local-0.3.7-skills.zip`** from **Assets**. Do not choose the documentation-only ZIP or GitHub's automatically generated source archives.
 2. **Extract all files** to the `Plug-ins` folder. Keep the whole extracted folder together; the Photoshop plugin loads files from `plugin/`.
 3. Double-click **`Install.cmd`** in the extracted folder. This installs and starts the **desktop floating toolbar**; it does **not** automatically install the Photoshop panel.
 4. Open **Adobe UXP Developer Tool (UDT)**. Choose **Add Plugin**, browse to **`plugin/manifest.json`** in the extracted folder, and then **Load** the plugin from UDT.
 5. In Photoshop, open the **chatgpt image studio Local** panel from the **Plugins** menu (location can vary by Photoshop version).
 6. Keep the extracted bundle in place while using the plugin. After updating the extracted files, run **`Install.cmd`** again and reload the manifest in UDT.
 
-The extracted release should contain:
+The release notes identify these setup files. Keep **all** extracted files, not only the files shown here:
 
 ```text
-chatgpt-image-studio-local-0.3.5/
+extracted-release-folder/
 ├── Install.cmd              # Installs desktop toolbar
-├── Install.ps1
-├── ImageStudioToolbar.exe
-├── Diagnose.cmd             # Checks desktop toolbar installation
-├── Uninstall.cmd
-├── README.txt
-├── assets/
+├── SKILLS_README.md         # Skill usage, limitations, and rollback
 └── plugin/
-    ├── manifest.json        # Load this file in UDT
-    ├── index.html
-    ├── main.js
-    └── ...
+    └── manifest.json        # Load this file in UDT
 ```
 
 > [!IMPORTANT]
 > Run `Install.cmd` **and** load `plugin/manifest.json` via UDT. These are two different setup steps and both are required.
 
 ## First-time setup
+
+The settings and screenshots in this section describe the v0.3.5 workflow. For v0.3.7 Skill usage, limitations, and rollback, read `SKILLS_README.md` in the downloaded package. Remote image generation still requires your chosen provider's API access; the Skill feature does not supply an API account or credits.
 
 1. Open the Photoshop plugin panel and click the **settings icon** in the top-right corner.
 2. Set **Language** (`English` or `Chinese`) and **Provider** (for example, OpenAI or a compatible gateway such as sub2api).
@@ -228,17 +235,25 @@ Run **`Uninstall.cmd`** from the extracted release folder to stop the Local desk
 
 ## Release verification
 
-The downloaded v0.3.5 ZIP has SHA-256:
+File: `chatgpt-image-studio-local-0.3.7-skills.zip`
+
+SHA-256 recorded on the v0.3.7 release asset:
 
 ```text
-cc0d8730fa26ce25bee3bcfb991cd990a335fda7c15a2f48baa3f25729b2dd05
+8d1d5910c956d43e60eea3a3cdd77dffa974bfd8aedb6917c9d7f10b5abd9a0a
 ```
 
-The archive passed an integrity check. This **does not** establish malware-free status or end-to-end functional validation on every Photoshop/provider combination. See the release notes for compatibility caveats.
+Compare the downloaded file's SHA-256 with this value before installation. A matching checksum confirms file consistency, **not** a malware audit or end-to-end Photoshop/API validation.
+
+## Try it and share feedback
+
+[Download the preview](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/releases/tag/v0.3.7) and try it with a copy of your artwork. For a reproducible problem, [open an issue](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/issues) with your Windows and Photoshop versions, plugin version, provider/model label, steps, expected result, and actual result. **Do not include API keys or private artwork.**
+
+For workflow ideas and examples you have permission to share, use [Discussions](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop/discussions). If the project is useful to you, a GitHub star helps others discover it.
 
 ## License and attribution
 
 This repository uses the [Apache License 2.0](LICENSE). Adobe and Photoshop are trademarks of Adobe Inc.; OpenAI and ChatGPT are trademarks of OpenAI. This project is independently developed and is not endorsed by either company.
 
-**Repository:** [springcell/ChatgptImageStudio-Of-Photoshop](https://github.com/springcell/ChatgptImageStudio-Of-Photoshop)  
+**Repository:** [springcell/ChatGPT-Image-Studio-for-Photoshop](https://github.com/springcell/ChatGPT-Image-Studio-for-Photoshop)  
 **Read this guide in Chinese:** [简体中文 README](README.zh-CN.md)
